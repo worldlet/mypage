@@ -1,0 +1,677 @@
+/*  ==================================================
+    公用部分
+    ==================================================  */
+
+/* 自定义字体 */
+@font-face {
+    font-family: 'myFont';
+    src: url('font/bahnschrift.ttf'),
+    url('font/bahnschrift.eot'); /* IE9 */
+}
+
+/* 滚动条样式美化 */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #02245b;
+    background: -webkit-linear-gradient(90deg, #02245b, #001141);
+    background: -o-linear-gradient(90deg, #02245b, #001141);
+    background: -moz-linear-gradient(90deg, #02245b, #001141);
+    background: linear-gradient(90deg, #02245b, #001141);
+    padding: 0;
+    margin: 0;
+    font-family: 'myFont', "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+    overflow: hidden;
+}
+
+.background-purple {
+    background: #262960;
+    background: -webkit-linear-gradient(180deg, #24275b, #282b64);
+    background: -o-linear-gradient(180deg, #24275b, #282b64);
+    background: -moz-linear-gradient(180deg, #24275b, #282b64);
+    background: linear-gradient(180deg, #24275b, #282b64);
+}
+
+.system-main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("../images/system/background.png") repeat scroll 0 0;
+    overflow: hidden;
+}
+
+.system-main .map-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 56%;
+}
+
+.system-main .system-info {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 44%;
+    padding: 20px 0;
+    /*min-width: 700px;*/
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    vertical-align: top;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    transition: 0.15s;
+}
+
+a:hover {
+    color: #0B7DFC;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+    padding: 0;
+    margin: 0;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.blue {
+    color: #0B7DFC !important;
+}
+
+.red {
+    color: #FF3D49 !important;
+}
+
+.green {
+    color: #1ECC5A !important;
+}
+
+.orange {
+    color: #FF7603 !important;
+}
+
+a.blue:hover, a.red:hover {
+    text-decoration: underline;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clearFix:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+}
+
+.clearFix {
+    zoom: 1;
+}
+
+.clear {
+    clear: both;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.hide {
+    display: none;
+}
+
+.map-content .header {
+    position: relative;
+    z-index: 5;
+    height: 42px;
+    padding: 40px 30px 30px;
+}
+
+.map-content .header > .menu-bar {
+    margin: 0 14px 0 -13px;
+    float: left;
+}
+
+.map-content .header > .menu-bar a {
+    position: relative;
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border-radius: 50%;
+}
+
+.map-content .header > .menu-bar a:before,
+.map-content .header > .menu-bar a:after,
+.map-content .header > .menu-bar a > span {
+    position: absolute;
+    left: 13px;
+    top: 14px;
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: #6466a5;
+    border-radius: 1px;
+    content: "";
+    transition: background-color .2s;
+}
+
+.map-content .header > .menu-bar a:after {
+    top: 20px;
+}
+
+.map-content .header > .menu-bar a > span {
+    top: 26px;
+}
+
+.map-content .header > .menu-bar a:hover {
+    background: #021a49 url("../images/icon-go.png") no-repeat scroll 0 0;
+}
+
+.map-content .header > .menu-bar a:hover:before,
+.map-content .header > .menu-bar a:hover:after,
+.map-content .header > .menu-bar a:hover > span {
+    display: none;
+}
+
+.map-content .header > .menu-bar a:active {
+    background-color: #021b47;
+}
+
+.map-content .header h1 {
+    position: relative;
+}
+
+.map-content .header a.notice {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    margin-right: 13px;
+    border-radius: 50%;
+    background: #021a49;
+    float: left;
+}
+
+.map-content .header a.notice.remind:before {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 2;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border: #021a49 solid 2px;
+    border-radius: 50%;
+    background: #ff4858;
+    content: "";
+}
+
+.map-content .header .user-info {
+    position: relative;
+    float: left;
+}
+
+.map-content .header .user-info > a {
+    position: relative;
+    display: block;
+    height: 42px;
+    padding: 0 50px 0 20px;
+    border-radius: 22px;
+    background: #021a49;
+    box-shadow: rgba(255, 255, 255, .06) 0 0 0 3px;
+    line-height: 42px;
+    font-size: 12px;
+    color: #546892;
+}
+
+.map-content .header .user-info > a span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #b1b3d3;
+}
+
+.map-content .header .user-info .head {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #1175fa;
+    box-shadow: rgba(0, 0, 0, .3) 0 3px 7px;
+    overflow: hidden;
+}
+
+.map-box {
+    position: absolute;
+    left: 30px;
+    top: 112px;
+    right: 20px;
+    bottom: 20px;
+}
+
+.map-box .map {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.horn:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: block;
+    width: 11px;
+    height: 11px;
+    border-top: #5170fa solid 1px;
+    border-left: #5170fa solid 1px;
+    content: "";
+}
+
+.horn:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: block;
+    width: 11px;
+    height: 11px;
+    border-right: #5170fa solid 1px;
+    border-bottom: #5170fa solid 1px;
+    content: "";
+}
+
+.map-box ul.float-nav {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.map-box ul.float-nav li {
+    position: relative;
+    height: 42px;
+    margin-right: 2px;
+    float: left;
+}
+
+.map-box ul.float-nav li > a {
+    position: relative;
+    display: block;
+    height: 42px;
+    padding: 0 20px 0 40px;
+    border-radius: 0 4px 0 4px;
+    background: #0f2f62;
+    line-height: 42px;
+    font-size: 14px;
+    color: #b1b3d3;
+}
+
+.map-box ul.float-nav li > a:before {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border: #8496b2 solid 2px;
+    border-radius: 50%;
+    content: "";
+    transition: .2s;
+}
+
+.map-box ul.float-nav li > a.active,
+.map-box ul.float-nav li > a:hover {
+    background: #4d7cfe;
+    color: #FFF;
+}
+
+.map-box ul.float-nav li > a.active:before,
+.map-box ul.float-nav li > a:hover:before {
+    border-color: #FFF;
+}
+
+.map-box ul.float-nav li > a.active:after {
+    position: absolute;
+    left: 0;
+    top: -20px;
+    display: block;
+    width: 100%;
+    height: 20px;
+    content: "";
+}
+
+.map-box ul.float-nav ol {
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+    display: none;
+    padding: 12px 16px 4px;
+    background: #021a49;
+    border-radius: 6px;
+    box-shadow: rgb(1, 29, 82) 0 5px 20px;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 24px;
+    color: #395589;
+}
+
+.map-box ul.float-nav ol:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.map-box ul.float-nav ol:before {
+    position: absolute;
+    left: 16px;
+    bottom: -10px;
+    display: block;
+    width: 0;
+    height: 0;
+    border: transparent solid 5px;
+    border-top-color: #021a49;
+    content: "";
+}
+
+.map-box ul.float-nav ol li {
+    height: auto;
+    float: none;
+}
+
+.map-box ul.float-nav ol span {
+    display: block;
+    margin-bottom: 4px;
+    line-height: 32px;
+    font-size: 24px;
+    color: #4d7cfe;
+}
+
+.system-info ul.general-iew {
+    margin: 1px 10px 8px 0;
+}
+
+.system-info ul.general-iew > li {
+    position: relative;
+    width: 32.4%;
+    height: 80px;
+    margin: 0 1.4% 12px 0;
+    border-radius: 0 4px 0 4px;
+    float: left;
+}
+
+.system-info ul.general-iew > li:nth-child(3),
+.system-info ul.general-iew > li:nth-child(6) {
+    margin-right: 0;
+}
+
+.system-info ul.general-iew span.icon {
+    display: block;
+    width: 36px;
+    height: 38px;
+    margin: 22px 28px 0 26px;
+    float: left;
+}
+
+.system-info ul.general-iew h5 {
+    padding-top: 15px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #6d71b1;
+    font-weight: normal;
+}
+
+.system-info ul.general-iew ol,
+.system-info ul.general-iew p {
+    line-height: 34px;
+    font-size: 26px;
+    font-weight: 300;
+    color: #bcbfff;
+}
+
+.system-panel {
+    margin-bottom: 20px;
+}
+
+.system-info .system-panel {
+    margin-right: 10px;
+}
+
+.system-panel .panel-head {
+    position: relative;
+    z-index: 2;
+    height: 63px;
+    background: #25285d url("../images/system/background.png") repeat scroll 0 0;
+    box-shadow: rgb(32, 35, 89) 0 6px 7px;
+    overflow: hidden;
+}
+
+.system-panel .panel-head img {
+    width: 20px;
+    height: 20px;
+    margin: 21px 10px 22px 20px;
+    float: left;
+}
+
+.system-panel .panel-head h5 {
+    line-height: 65px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #c5c6df;
+    float: left;
+}
+
+.system-panel .panel-head h5 span {
+    padding-left: 6px;
+    font-size: 15px;
+}
+
+.system-panel .panel-content {
+    position: relative;
+    z-index: 1;
+}
+
+.system-panel .panel-content:before,
+.system-panel .panel-content:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+
+.panel-content .top-company {
+    margin: 64px 0 60px 52px;
+    overflow: hidden;
+}
+
+.top-company h5 {
+    position: relative;
+    padding: 0 0 12px 26px;
+    line-height: 32px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #c4c6ef;
+}
+
+.top-company h5:before {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border: 3px solid #02d1f4;
+    content: "";
+}
+
+.top-company span {
+    display: block;
+    padding-left: 26px;
+    margin-bottom: 32px;
+    line-height: 24px;
+    font-size: 13px;
+    color: #43468a;
+    font-weight: normal;
+}
+
+.top-company dd h5:before {
+    border-color: #FFC703;
+}
+
+.top-company dd h5 {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.top-company dd h5 i {
+    display: inline-block;
+    padding-left: 4px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #43468a;
+    line-height: initial;
+    font-style: normal;
+}
+
+.top-company dt {
+    width: 56%;
+    float: left;
+}
+
+.top-company dd {
+    width: 40%;
+    margin: 0;
+    float: left;
+}
+
+.system-info p.footer {
+    height: 50px;
+    padding-right: 23px;
+    font-size: 14px;
+    color: #3f4483;
+    line-height: 50px;
+    text-align: right;
+    font-family: Verdana, "微软雅黑";
+}
+
+.tooltips-head {
+    position: relative;
+    min-width: 130px;
+    height: 34px;
+    padding: 0 24px;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 4px 4px 0 0;
+    line-height: 34px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.tooltips-body {
+    height: 90px;
+    padding: 8px 24px;
+    border-radius: 0 0 4px 4px;
+    background: rgba(0, 0, 0, .7);
+    color: #FFF;
+    font-size: 12px;
+}
+
+.tooltips-body > div {
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    line-height: 28px;
+    overflow: hidden;
+}
+
+.tooltips-body span {
+    display: inline-block;
+    width: 86px;
+    text-align: left;
+    float: left;
+}
+
+.general-iew ol {
+    position: relative;
+    height: 34px;
+    overflow: hidden;
+}
+
+.general-iew ol > li {
+    list-style: none;
+    width: 10px;
+    float: left;
+    text-align: center;
+    position: absolute;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/custom-system.css">
+</head>
+<body>
+<div class="system-main">
+    <div class="map-content">
+        <div class="header">
+            <div class="menu-bar"><a href="#"><span></span></a></div>
+            <h1 class="pull-left"><a href="#"><img src="images/system/logo.png" alt=""></a></h1>
+            <div class="pull-right">
+                <a href="#" class="notice remind"><img src="images/system/notice.png" alt=""></a>
+                <div class="user-info">
+                    <div class="head"><img src="images/system/head.png" alt=""></div>
+                    <a href="JavaScript:void(0);">欢迎，<span>张启功</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="map-box horn">
+            <div id="map" class="map"></div>
+            <ul class="float-nav">
+                <li>
+                    <a href="JavaScript:void(0);" class="icon-circle">颍州市</a>
+                    <ol>
+                        <li>企业入驻数<span>2500</span></li>
+                        <li>成功对接金融<span>800</span></li>
+                        <li>机构入驻数<span>36</span></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="JavaScript:void(0);" class="icon-circle">阜南县</a>
+                    <ol style="display: none">
+                        <li>企业入驻数<span>2500</span></li>
+                        <li>成功对接金融<span>800</span></li>
+                        <li>机构入驻数<span>36</span></li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="system-info">
+        <ul class="general-iew clearFix">
+            <li class="background-purple horn">
+                <span class="icon"><img src="images/system/system-icon-1.png" alt=""></span>
+                <h5>成功对接数</h5>
+                <ol class="number number-1"></ol>
+            </li>
+            <li class="background-purple horn">
+                <span class="icon"><img src="images/system/system-icon-2.png" alt=""></span>
+                <h5>成功对接金融</h5>
+                <ol class="number number-2"></ol>
+            </li>
+            <li class="background-purple horn">
+                <span class="icon"><img src="images/system/system-icon-3.png" alt=""></span>
+                <h5>企业入驻数</h5>
+                <ol class="number number-3"></ol>
+            </li>
+            <li class="background-purple horn">
+                <span class="icon"><img src="images/system/system-icon-4.png" alt=""></span>
+                <h5>机构入驻数</h5>
+                <ol class="number number-4"></ol>
+            </li>
+            <li class="background-purple horn">
+                <span class="icon"><img src="images/system/system-icon-5.png" alt=""></span>
+                <h5>项目数量</h5>
+                <ol class="number number-5"></ol>
+            </li>
+            <li class="background-purple horn">
+                <span class="icon"><img src="images/system/system-icon-6.png" alt=""></span>
+                <h5>报告查询数量</h5>
+                <ol class="number number-6"></ol>
+            </li>
+        </ul>
+        <div class="system-panel background-purple">
+            <div class="panel-head"><img src="images/system/system-icon-7.png" alt=""><h5>申请产品<span>TOP5</span></h5></div>
+            <div class="panel-content">
+                <div id="apply-product" class="charts" style="height: 346px;"></div>
+            </div>
+        </div>
+        <div class="system-panel background-purple">
+            <div class="panel-head"><img src="images/system/system-icon-8.png" alt=""><h5>融资金额行业占比</h5></div>
+            <div class="panel-content">
+                <div id="financing-ratio" class="charts" style="height: 346px;"></div>
+            </div>
+        </div>
+        <div class="system-panel background-purple">
+            <div class="panel-head"><img src="images/system/system-icon-9.png" alt=""><h5>全年月融资金额趋势</h5></div>
+            <div class="panel-content">
+                <div id="financing-trend" class="charts" style="height: 346px;"></div>
+            </div>
+        </div>
+        <div class="system-panel background-purple">
+            <div class="panel-head"><img src="images/system/system-icon-7.png" alt=""><h5>融资金额<span>TOP</span></h5></div>
+            <div class="panel-content">
+                <dl class="top-company">
+                    <dt>
+                        <h5>北京中科XXXXX股份有限公司</h5>
+                        <span>企业名称</span>
+                    </dt>
+                    <dd>
+                        <h5>3000<i>万元</i></h5>
+                        <span>融资金额</span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <p class="footer">Copyright ©2019 北京中科博润科技股份有限公司, All Rights Reserved</p>
+    </div>
+</div>
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/map/json/china.js"></script>
+<script src="js/map/custom.js"></script>
+<script src="js/number.js"></script>
+<script>
+$(document).ready(function () {
+    $('.float-nav > li').on('mouseover', function () {
+        $(this).children('a').addClass('active');
+        $(this).find('ol').stop().slideDown(200);
+    }).on('mouseleave', function () {
+        $(this).children('a').removeClass('active');
+        $(this).find('ol').stop().slideUp(200);
+    });
+
+    //  val：数值型(默认70225800)；
+    //  parameters：对象({addMin(随机最小值),addMax(随机最大值),interval(动画间隔),speed(动画滚动速度),width(列宽),height(行高)})
+    $(".number-1").runNum(56);
+    $(".number-2").runNum(36);
+    $(".number-3").runNum(242);
+    $(".number-4").runNum(1790);
+    $(".number-5").runNum(860);
+    $(".number-6").runNum(1056);
+})
+</script>
+</body>
+</html>
