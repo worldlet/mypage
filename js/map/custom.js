@@ -228,7 +228,7 @@ $(document).ready(function () {
         series: [{
             name: '阜阳市',
             type: 'map',
-            map: 'china',
+            map: 'cs',
             roam: true,
             //  文字统一样式设置
             label: {
