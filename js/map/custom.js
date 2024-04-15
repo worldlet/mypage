@@ -198,14 +198,17 @@ $(document).ready(function () {
 
     //  省份地图
     var dt = [
-        {name: '太和县', value: 1, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>360</div>'},
-        {name: '颍泉区', value: 2, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
-        {name: '颍东区', value: 3, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
-        {name: '颍上县', value: 4, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
-        {name: '颍州区', value: 5, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
-        {name: '阜南县', value: 6, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
-        {name: '临泉县', value: 7, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
-        {name: '界首市', value: 8, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'}
+        {name: '双桥区', value: 1, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>360</div>'},
+        {name: '双滦区', value: 2, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
+        {name: '鹰手营子矿区', value: 3, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
+        {name: '围场满族蒙古族自治县', value: 4, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
+        {name: '承德县', value: 5, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
+        {name: '丰宁满族自治县', value: 6, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
+        {name: '宽城满族自治县', value: 7, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
+        {name: '隆化县', value: 8, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
+        {name: '滦平县', value: 9, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
+        {name: '平泉县', value: 10, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'},
+        {name: '兴隆县', value: 11, text: '<div><span>企业入驻数:</span>2500</div><div><span>成功对接金融:</span>800</div><div><span>机构入驻数:</span>36</div>'}
     ];
 
     var option = {
@@ -264,18 +267,21 @@ $(document).ready(function () {
             x: '-1000 px', //图例横轴位置
             y: '-1000 px', //图例纵轴位置
             splitList: [
-                { start: 1, end: 1, label: '太和县', color: '#4d7cfe' },
-                { start: 2, end: 2, label: '颍泉区', color: '#42d4b2' },
-                { start: 3, end: 3, label: '颍东区', color: '#4082f6' },
-                { start: 4, end: 4, label: '颍上县', color: '#6c71d6' },
-                { start: 5, end: 5, label: '颍州区', color: '#1b6efd' },
-                { start: 6, end: 6, label: '阜南县', color: '#3ab4ff' },
-                { start: 7, end: 7, label: '临泉县', color: '#4d7cfe' },
-                { start: 8, end: 8, label: '界首市', color: '#6c71d6' }
+                { start: 1, end: 1, label: '双桥区', color: '#fe4d4d' },
+                { start: 2, end: 2, label: '双滦区', color: '#feab4d' },
+                { start: 3, end: 3, label: '鹰手营子矿区', color: '#fee64d' },
+                { start: 4, end: 4, label: '围场满族蒙古族自治县', color: '#ccfe4d' },
+                { start: 5, end: 5, label: '承德县', color: '#88fe4d' },
+                { start: 6, end: 6, label: '丰宁满族自治县', color: '#4dfec0' },
+                { start: 7, end: 7, label: '宽城满族自治县', color: '#4de9fe' },
+                { start: 8, end: 8, label: '隆化县', color: '#4d94fe' },
+                { start: 9, end: 9, label: '滦平县', color: '#734dfe' },
+                { start: 10, end: 10, label: '平泉县', color: '#d24dfe' },
+                { start: 11, end: 11, label: '兴隆县', color: '#fe4d97' }
             ]
         },
     };
-    $.get('js/map/json/geometryCouties/341200.json', function (csJson) {
+    $.get('js/map/json/geometryCouties/130800.json', function (csJson) {
         echarts.registerMap('cs', csJson);
         var mainMap = echarts.init(document.getElementById('map'));
         mainMap.setOption(option);
